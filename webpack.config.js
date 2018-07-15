@@ -1,3 +1,5 @@
+const path = require('path');
+
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
@@ -15,6 +17,7 @@ const config = {
 	plugins: [
 		new HTMLWebpackPlugin({
 			title: 'Webpack demo',
+			template: path.resolve(__dirname, 'index.html'),
 		}),
 		// new PreloadWebpackPlugin({
 		// rel: 'preload',
