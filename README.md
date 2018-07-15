@@ -1,7 +1,7 @@
 # note-detector
 To detect the notes you are playing on your instrument or from a file
 
-This is (will be) a small web application to read analyse and detect the notes of audio. With the goal to read the notes played from an instrument.
+This is (will be) a small web application to read analyse and detect the notes of audio. With the goal to read the notes played by an instrument.
 
 
 
@@ -34,4 +34,4 @@ Implement and learn some more about:
 - streaming audio 
 - webpack (just to learn as it is too OP for such a small project)
 
-Based on: https://github.com/cwilso/PitchDetect
+Based on: https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/webaudiotuner/

@@ -1,4 +1,4 @@
-import detectWebAudio, { detectGetUserMedia } from './detectWebAudio';
+import { detectAudioContext, detectGetUserMedia } from './detectWebAudio';
 import {
 	findFundamentalFrequency,
 	findClosestNote,
@@ -7,7 +7,7 @@ import {
 import notes from '../assets/notes.json';
 
 // Feature detect and pass AudioContext to audioCtx
-const audioCtx = detectWebAudio();
+const audioCtx = detectAudioContext();
 const getUserMedia = detectGetUserMedia();
 
 const frequencyTable = notes;
@@ -15,23 +15,33 @@ let baseFrequency = 440; // A default frequency ot start with
 let currentNoteIndex = 57; // 57 is the A4 in the notes array
 let notesArray = frequencyTable[baseFrequency]; // Select a frequency table based on the frequency
 
+// Predefine variables
 let audioSource;
 let audioAnalyser;
 let microphoneStream;
 
-if (audioCtx) {
-	console.log('Your browser support Audio Context');
-	// audioOscillator();
+// Get elements from page
+const aNote = document.getElementById('a-note');
+const aFrequency = document.getElementById('a-frequency');
 
+// Check whether the browser does support the feature. audioCtx = false or window.AudioContext
+if (audioCtx) {
+	console.log('Your browser supports Audio Context');
+
+	// getUserMedia = window.getUserMedia(went through feature detects) or false
 	if (getUserMedia) {
+		console.log('Your brower supports getUserMedia');
 		getUserMedia({ audio: true })
 			.then(streamReceived)
 			.catch(handleError);
+	} else {
+		console.log('Your brower does not support getUserMedia');
 	}
 } else {
 	console.log('Your browser does not support Audio Context');
 }
 
+//
 function detectNote() {
 	const buffer = new Uint8Array(audioAnalyser.fftSize); //
 	audioAnalyser.getByteTimeDomainData(buffer);
@@ -45,7 +55,9 @@ function detectNote() {
 		const note = findClosestNote(fundamentalFrequency, notesArray);
 		const cents = findCentsOffPitch(fundamentalFrequency, note.frequency);
 
-		console.log(note.note, cents);
+		updateNote(note.note);
+		updateFrequency(note.frequency);
+		console.log(note.note, note.frequency, cents);
 	}
 
 	window.requestAnimationFrame(detectNote); // Tells the browser we wish to perform a animation. Call callback before repaint
@@ -62,6 +74,7 @@ function changeBaseFrequency(delta) {
 	}
 }
 
+// Call when the stream has connected
 function streamReceived(stream) {
 	microphoneStream = stream; // Set the stream to microphoneStream
 
@@ -84,6 +97,17 @@ function audioOscillator() {
 	audioSource.start(); // Start playing the Oscillator
 }
 
+// Update the note on the page
+function updateNote(note) {
+	aNote.innerText = note;
+}
+
+// Update the frequency on the page
+function updateFrequency(frequency) {
+	aFrequency.innerText = `${frequency}--Hz`;
+}
+
+// Handle error
 function handleError(err) {
-	console.log(`Opps something went wrong: ${err}`);
+	console.error(`Opps something went wrong: ${err}`);
 }
