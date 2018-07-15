@@ -12,6 +12,7 @@ const detectGetUserMedia = function() {
 		navigator.getUserMedia ||
 		navigator.webkitGetUserMedia ||
 		navigator.mozGetUserMedia;
+
 	if (
 		(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) ||
 		navigator.getUserMedia
@@ -23,8 +24,19 @@ const detectGetUserMedia = function() {
 						navigator.getUserMedia(constraints, resolve, reject);
 					});
 			  };
-	return fale;
+	return false;
 };
 
-export { detectGetUserMedia };
-export default detectAudioContext;
+const WebAudio = {
+	detectAudioContext,
+	detectGetUserMedia,
+};
+
+// Export individualy
+export { detectAudioContext, detectGetUserMedia };
+
+// Export for default import
+export default {
+	detectAudioContext,
+	detectGetUserMedia,
+};
