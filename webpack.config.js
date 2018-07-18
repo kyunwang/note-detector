@@ -24,6 +24,14 @@ const config = {
 		// 	as: 'script',
 		// }),
 	],
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+		],
+	},
 };
 
 module.exports = config;
