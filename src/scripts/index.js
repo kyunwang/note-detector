@@ -1,3 +1,5 @@
+import '../styles/index.css';
+
 import { detectAudioContext, detectGetUserMedia } from './detectWebAudio';
 import {
 	findFundamentalFrequency,
