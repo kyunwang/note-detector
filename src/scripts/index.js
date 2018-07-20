@@ -25,6 +25,7 @@ let microphoneStream;
 // Get elements from page
 const aNote = document.getElementById('a-note');
 const aFrequency = document.getElementById('a-frequency');
+const aCents = document.getElementById('a-cents');
 
 // Check whether the browser does support the feature. audioCtx = false or window.AudioContext
 if (audioCtx) {
@@ -59,7 +60,8 @@ function detectNote() {
 
 		updateNote(note.note);
 		updateFrequency(note.frequency);
-		console.log(note.note, note.frequency, cents);
+		updateCents(cents);
+		// console.log(note.note, note.frequency, cents);
 	}
 
 	window.requestAnimationFrame(detectNote); // Tells the browser we wish to perform a animation. Call callback before repaint
@@ -107,6 +109,11 @@ function updateNote(note) {
 // Update the frequency on the page
 function updateFrequency(frequency) {
 	aFrequency.innerText = `${frequency}--Hz`;
+}
+
+// Update the cents on the page (Not sure about the accuracy)
+function updateCents(cents) {
+	aCents.innerText = `${cents} Cents`;
 }
 
 // Handle error
