@@ -7,7 +7,7 @@
 		"start": "",
 		"dev": "webpack-serve --config=./webpack.config.js",
 		"build": "webpack --mode=production --config=./webpack.config.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"deploy": "gh-pages -d dist"
 	},
 	"repository": {
 		"type": "git",
@@ -30,5 +30,8 @@
 		"webpack": "^4.16.0",
 		"webpack-cli": "^3.0.8",
 		"webpack-serve": "^2.0.2"
+	},
+	"dependencies": {
+		"gh-pages": "^1.2.0"
 	}
 }
