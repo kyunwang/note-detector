@@ -108,12 +108,12 @@ function updateNote(note) {
 
 // Update the frequency on the page
 function updateFrequency(frequency) {
-	aFrequency.innerText = `${frequency}--Hz`;
+	aFrequency.innerText = frequency;
 }
 
 // Update the cents on the page (Not sure about the accuracy)
 function updateCents(cents) {
-	aCents.innerText = `${cents} Cents`;
+	aCents.innerText = cents;
 }
 
 // Handle error

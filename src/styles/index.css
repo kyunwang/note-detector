@@ -1,17 +1,82 @@
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
-	background: #fefefe;
-	color: #3a3a3a;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	background: #f3f3f3;
+	color: #3a3a3a;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
 }
 
 main {
+	width: 90%;
+	margin: auto;
 }
 
 h3 {
-	font-size: 12rem;
+	font-size: 8rem;
+	margin: 0;
+	margin-bottom: 3rem;
 }
 
 h4 {
+	margin: 0;
+	margin-top: 1.4rem;
+}
+
+p {
+	font-size: 2rem;
+}
+
+header {
+	padding: 0.6rem;
+	background: #a1f0dc;
+	font-size: 0.8rem;
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+}
+
+aside {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.card--info {
+	flex: 1;
+	flex-basis: 18rem;
+	font-weight: 700;
+	background: #fafafa;
+	max-width: 24rem;
+	margin: 1rem 0;
+	border-radius: 0.3rem;
+
+	overflow: hidden;
+	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.card--info p {
+	margin: 1.8rem;
+	margin-top: 1rem;
+}
+
+@media all and (min-width: 40rem) {
+	h3 {
+		font-size: 35vh;
+	}
+
+	.card--info {
+		margin: 1rem;
+	}
 }
