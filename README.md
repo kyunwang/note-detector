@@ -1,9 +1,7 @@
 # note-detector
 To detect the notes you are playing on your instrument or from a file
 
-This is (will be) a small web application to read analyse and detect the notes of audio. With the goal to read the notes played by an instrument.
-
-
+This is (will be) a small web application to read, analyse and detect the notes of audio. With the goal to read the notes played by an instrument.
 
 # Table of Content
 - [Getting started](#getting-started)
@@ -16,22 +14,25 @@ This is (will be) a small web application to read analyse and detect the notes o
 // Clone the repo
 $ git clone https://github.com/kyunwang/note-detector.git
 
-// And open the index.html.
+// Install the repos
+$ npm install
 
-// That's all!
+// Start the project
+$ npm run dev
+
+// Or build the project
+$ npm run build
 ```
 
-# Steps to make
-The steps I have to take in large outlining:
-
-1. 
-
 # Learning goals
-Implement and learn some more about:
-- service workers or web worker
-- canvas
+Playing and learning a bit about:
 - web audio
 - streaming audio 
 - webpack (just to learn as it is too OP for such a small project)
+- service workers or web worker (Start test with)
+
 
 Based on: https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/webaudiotuner/
+
+# License
+Licensed under MIT
