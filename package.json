@@ -30,6 +30,7 @@
 		"preload-webpack-plugin": "^2.3.0",
 		"prettier": "^1.13.7",
 		"style-loader": "^0.21.0",
+		"uglifyjs-webpack-plugin": "^1.2.7",
 		"webpack": "^4.16.0",
 		"webpack-cli": "^3.0.8",
 		"webpack-serve": "^2.0.2"

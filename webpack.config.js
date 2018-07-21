@@ -1,7 +1,8 @@
 const path = require('path');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin'); // Not supported in wp4
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 require('dotenv').config({ path: './vars.env' });
 
@@ -20,10 +21,13 @@ const config = {
 			template: path.resolve(__dirname, 'index.html'),
 		}),
 		// new PreloadWebpackPlugin({
-		// rel: 'preload',
+		// 	rel: 'preload',
 		// 	as: 'script',
 		// }),
 	],
+	optimization: {
+		minimizer: [new UglifyWebpackPlugin({ sourceMap: true })],
+	},
 	module: {
 		rules: [
 			{
