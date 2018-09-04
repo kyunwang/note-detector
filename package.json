@@ -4,7 +4,7 @@
 	"description": "To detect the notes you are playing on your instrument or from a file",
 	"main": "index.js",
 	"scripts": {
-		"start": "",
+		"start": "npm run dev",
 		"dev": "webpack-serve --config=./webpack.config.js",
 		"build": "webpack --mode=production --config=./webpack.config.js",
 		"deploy": "gh-pages -d dist"
@@ -26,6 +26,7 @@
 		"babel-preset-env": "^1.7.0",
 		"css-loader": "^1.0.0",
 		"dotenv": "^6.0.0",
+		"gh-pages": "^1.2.0",
 		"html-webpack-plugin": "^3.2.0",
 		"preload-webpack-plugin": "^2.3.0",
 		"prettier": "^1.13.7",
@@ -36,6 +37,6 @@
 		"webpack-serve": "^2.0.2"
 	},
 	"dependencies": {
-		"gh-pages": "^1.2.0"
+		"pitch-analyser": "0.0.1"
 	}
 }
