@@ -1,7 +1,11 @@
-# note-detector
+# Note Detector
 To detect the notes you are playing on your instrument or from a file
 
 This is (will be) a small web application to read, analyse and detect the notes of audio. With the goal to read the notes played by an instrument.
+
+*This project makes use of a simple pitch analyser I build [Here](https://github.com/kyunwang/pitch-analyser)*
+
+Your browser needs to support the `Web Audio API` to view this demo.
 
 # Table of Content
 - [Getting started](#getting-started)
