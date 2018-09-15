@@ -14,7 +14,7 @@
 		"url": "git+https://github.com/kyunwang/note-detector.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Kang Yun Wang",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/kyunwang/note-detector/issues"
@@ -37,6 +37,6 @@
 		"webpack-serve": "^2.0.2"
 	},
 	"dependencies": {
-		"pitch-analyser": "0.0.1"
+		"pitch-analyser": "^0.1.2"
 	}
 }

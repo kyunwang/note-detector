@@ -12,6 +12,7 @@ const analyserOptions = {
 	callback: analyserCallback,
 	returnNote: true,
 	returnCents: true,
+	decimals: 2,
 };
 
 // Initialize the analyser
