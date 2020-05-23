@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Note detector</title>
-	</head>
 
-	<body>
-		<h4>A Music note detector</h4>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Note detector</title>
+</head>
 
-		<main>
-			<div class="note-container">
-				<h3 id="a-note">-</h3>
-				<button>Start</button>
+<body>
+	<h4>A Music note detector</h4>
+
+	<main>
+		<div class="note-wrapper">
+			<h3 id="a-note">-</h3>
+			<button class="start-button">Start</button>
+			<div class="controls">
+				<button id="control-pause">
+					<i class="gg-icon gg-play-pause"></i>
+				</button>
+				<button id="control-play">
+					<i class="gg-icon gg-play-button"></i>
+				</button>
+				<!-- <i class="gg-icon gg-play-stop"></i> -->
+			</div>
+		</div>
+
+		<aside>
+			<div class="card--info">
+				<header>frequency (hz)</header>
+				<p id="a-frequency">-</p>
 			</div>
 
-			<aside>
-				<div class="card--info">
-					<header>frequency (hz)</header>
-					<p id="a-frequency">-</p>
-				</div>
+			<div class="card--info">
+				<header>cents</header>
+				<p id="a-cents">-</p>
+			</div>
+		</aside>
+	</main>
 
-				<div class="card--info">
-					<header>cents</header>
-					<p id="a-cents">-</p>
-				</div>
-			</aside>
-		</main>
+	<footer>
+		Made by <a href="https://github.com/kyunwang">kyunwang</a> using the
+		<a href="https://github.com/kyunwang/pitch-analyser">Pitch Analyser </a>
+		package. Repo <a href="https://github.com/kyunwang/note-detector">here</a>
+	</footer>
+<script type="text/javascript" src="main.js"></script></body>
 
-		<footer>
-			Made by <a href="https://github.com/kyunwang">kyunwang</a> using the
-			<a href="https://github.com/kyunwang/pitch-analyser">Pitch Analyser </a>
-			package. Repo <a href="https://github.com/kyunwang/note-detector">here</a>
-		</footer>
-	<script type="text/javascript" src="main.js"></script></body>
 </html>
