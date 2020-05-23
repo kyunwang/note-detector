@@ -25,6 +25,10 @@ $ git clone https://github.com/kyunwang/note-detector.git
 // Install the repos
 $ npm install
 
+// Add a vars.env in the root
+HOST=localhost
+PORT=8000
+
 // Start the project
 $ npm run dev
 
