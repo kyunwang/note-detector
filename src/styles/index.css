@@ -1,3 +1,5 @@
+@import url('https://css.gg/css?=|play-button|play-pause|play-stop');
+
 * {
 	box-sizing: border-box;
 }
@@ -33,27 +35,6 @@ main > div:first-of-type {
 	position: relative;
 }
 
-main > div:first-of-type button {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 1;
-	transition: opacity 0.3s ease-in;
-}
-
-main > div:first-of-type button::before {
-	display: initial;
-}
-
-main > div:first-of-type button:hover::before {
-	animation: pulse 2s infinite;
-}
-
-main > div:first-of-type button.hidden {
-	opacity: 0;
-}
-
 h3 {
 	font-size: 8rem;
 	margin: 0;
@@ -67,30 +48,6 @@ h4 {
 
 p {
 	font-size: 2rem;
-}
-
-button {
-	font-size: 1.6rem;
-	font-weight: 700;
-	background: #a1f0dc;
-	border: none;
-	border-radius: 0.3rem;
-	padding: 1.2rem 2.4rem;
-	text-transform: uppercase;
-	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.12);
-	cursor: pointer;
-	outline: none;
-}
-
-button::before {
-	display: none;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	box-shadow: 0 0 0 rgba(0, 0, 0, 0.12);
 }
 
 header {
@@ -140,6 +97,46 @@ aside {
 	flex-flow: row wrap;
 }
 
+button {
+	font-size: 1.6rem;
+	font-weight: 700;
+	border: none;
+
+	cursor: pointer;
+	outline: none;
+}
+
+.start-button {
+	font-size: 1.6rem;
+	font-weight: 700;
+	border-radius: 0.3rem;
+	padding: 1.2rem 2.4rem;
+	background: #a1f0dc;
+	text-transform: uppercase;
+	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.12);
+}
+
+.start-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+	transition: opacity 0.3s ease-in;
+}
+
+.start-button::before {
+	display: initial;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.12);
+	animation: pulse 2s infinite;
+}
+
 .card--info {
 	flex: 1;
 	flex-basis: 18rem;
@@ -148,7 +145,6 @@ aside {
 	max-width: 24rem;
 	margin: 1rem 0;
 	border-radius: 0.3rem;
-
 	overflow: hidden;
 	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
 }
@@ -156,6 +152,16 @@ aside {
 .card--info p {
 	margin: 1.8rem;
 	margin-top: 1rem;
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 1rem;
+	top: 0;
+	height: 2rem;
 }
 
 @media all and (min-width: 40rem) {
@@ -169,8 +175,7 @@ aside {
 }
 
 .hidden {
-	pointer-events: none;
-	opacity: 0;
+	display: none;
 }
 
 @-webkit-keyframes TextGradientAnimation {
